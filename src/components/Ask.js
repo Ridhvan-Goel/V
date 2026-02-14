@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Lottie from 'lottie-react';
 import { Link, useNavigate } from 'react-router-dom';
-import MessageSend from './MessageSend';
 import './styles/ask.css';
 import boyLookingToBeAcceptedFile from './assets/animations/boy-looking-to-accept.json';
 import cryingBoyAnimationFile_1 from './assets/animations/crying_boy_1.json';
@@ -138,7 +137,7 @@ export default function Ask(props) {
               </div>
             </button>
           </div>
-          {yesOrNow === "Yes" ? <MessageSend /> : null}
+          {yesOrNow === "Yes" ? <Link to="/endpage" className="button-text px-7 py-3 border-2 rounded-xl text-xl bg-transparent bg-gradient-to-tr from-[#3a6186] to-[#89253e] text-gray-200 shadow-xl shadow-pink-500 hover:scale-110 active:scale-90 duration-200 no-underline mt-4">See your surprise</Link> : null}
         </div>
       </div>
       <Link to="/destroy" className="destroy-link hidden pointer-events-none select-none"></Link>
