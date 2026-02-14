@@ -1,46 +1,18 @@
 import React from 'react'
-import Lottie from 'react-lottie'
-import { useState , useEffect } from 'react'
+import Lottie from 'lottie-react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './styles/envelope.css'
 import boyThinkAnimationFile from './assets/animations/boy-thinking.json'
 import boyJumpingAnimatinFile from './assets/animations/boy-jumping.json'
 import YayAnimationFile from './assets/animations/yay.json'
 
-const boyThinkAnimation = {
-  loop: true,
-  autoplay: true,
-  animationData: boyThinkAnimationFile,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice"
-  },
-};
-
-
-const boyJumpingAnimatin = {
-  loop: true,
-  autoplay: true,
-  animationData: boyJumpingAnimatinFile,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice"
-  },
-};
-
-
-const YayAnimation = {
-  loop: true,
-  autoplay: true,
-  animationData: YayAnimationFile,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice"
-  },
-};
-
 export default function Card(props) {
 
   const [isEnvelopeOpen, setIsEnvelopeOpen] = useState(false);
   const [buttonText, setButtonText] = useState("Open me !");
 
+  const lottieSize = window.innerWidth < 640 ? 130 : 230;
 
   const handleOpenEnvelope = () => {
     setIsEnvelopeOpen(true);
@@ -58,7 +30,6 @@ export default function Card(props) {
   useEffect(() => {
     props.setProgress(100);
   }, [])
-  
 
   return (
     <div className="card-and-animation flex min-h-screen flex-col bg-transparent bg-gradient-to-tr from-[#3a1c71] via-[#d76d77] to-[#ffaf7b] ">
@@ -97,7 +68,6 @@ export default function Card(props) {
           className="button-1 w-fit h-fit">
           <button
             onClick={handleOpenEnvelope}
-            // disabled={``}
             className='rounded-lg py-4 px-6 shadow-[8px_8px_0px_0px_rgba(109,40,217)] bg-transparent bg-gradient-to-tr from-[#cc2b5e] to-[#3a1c71] active:shadow-none active:translate-x-1 active:translate-y-1 duration-75'
           >
             <div
@@ -122,28 +92,28 @@ export default function Card(props) {
           <div
             className="animation-1 pointer-events-none">
             <Lottie
-              options={boyThinkAnimation}
-              height={window.innerWidth < 640 ? 130 : 230}
-              width={window.innerWidth < 640 ? 130 : 230}
-              isClickToPauseDisabled={true}
+              animationData={boyThinkAnimationFile}
+              loop={true}
+              autoplay={true}
+              style={{ height: lottieSize, width: lottieSize }}
             />
           </div>
           <div
             className="animation-2 hidden pointer-events-none">
             <Lottie
-              options={boyJumpingAnimatin}
-              height={window.innerWidth < 640 ? 111 : 230}
-              width={window.innerWidth < 640 ? 111 : 230}
-              isClickToPauseDisabled={true}
+              animationData={boyJumpingAnimatinFile}
+              loop={true}
+              autoplay={true}
+              style={{ height: lottieSize, width: lottieSize }}
             />
           </div>
           <div
             className="animation-3 pointer-events-none absolute hidden">
             <Lottie
-              options={YayAnimation}
-              height={window.innerWidth < 640 ? 125 : 230}
-              width={window.innerWidth < 640 ? 125 : 230}
-              isClickToPauseDisabled={true}
+              animationData={YayAnimationFile}
+              loop={true}
+              autoplay={true}
+              style={{ height: lottieSize, width: lottieSize }}
             />
           </div>
         </div>

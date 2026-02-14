@@ -19,9 +19,10 @@ function App() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-
+    console.log("[v0] App mounted, starting loading timer");
     setTimeout(() => {
-      setLoading("False");
+      console.log("[v0] Loading complete, showing FrontPage");
+      setLoading(false);
     }, 2000);
   }, [])
 

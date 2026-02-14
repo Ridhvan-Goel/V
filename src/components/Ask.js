@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Lottie from 'react-lottie';
-import { Link , useNavigate} from 'react-router-dom';
+import Lottie from 'lottie-react';
+import { Link, useNavigate } from 'react-router-dom';
 import MessageSend from './MessageSend';
 import './styles/ask.css';
 import boyLookingToBeAcceptedFile from './assets/animations/boy-looking-to-accept.json';
@@ -9,74 +9,26 @@ import cryingBoyAnimationFile_2 from './assets/animations/crying_boy_2.json'
 import doesntMatterAnimationFile from './assets/animations/doesnt_matter_boy.json'
 import acceptAnimationFile from './assets/animations/love_animation.json'
 
-const boyLookingToBeAccepted = {
-  loop: true,
-  autoplay: true,
-  animationData: boyLookingToBeAcceptedFile,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice"
-  },
-};
-
-const cryingBoyAnimation_1 = {
-  loop: true,
-  autoplay: true,
-  animationData: cryingBoyAnimationFile_1,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice"
-  },
-};
-
-const cryingBoyAnimation_2 = {
-  loop: true,
-  autoplay: true,
-  animationData: cryingBoyAnimationFile_2,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice"
-  },
-};
-
-const doesntMatterAnimation = {
-  loop: true,
-  autoplay: true,
-  animationData: doesntMatterAnimationFile,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice"
-  },
-};
-
-const acceptAnimation = {
-  loop: true,
-  autoplay: true,
-  animationData: acceptAnimationFile,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice"
-  },
-};
-
-
 export default function Ask(props) {
 
   const navigate = useNavigate();
 
   const [noCount, setNoCount] = useState(0);
   const [askText, setAskText] = useState("Will you do me the honor of being my Valentine?");
-  const [emojiAsk, setEmojiAsk] = useState('💗');
+  const [emojiAsk, setEmojiAsk] = useState('\u{1F497}');
   const [yesOrNow, setYesOrNow] = useState(null);
 
-
   useEffect(() => {
-    if (noCount > 2) { 
+    if (noCount > 2) {
       setTimeout(() => {
-        navigate('/destroy'); 
-      }, 1000); 
+        navigate('/destroy');
+      }, 1000);
     }
   }, [noCount, navigate]);
 
   useEffect(() => {
     props.setProgress(100);
   }, [])
-  
 
   const handleNoClick = (event) => {
     event.preventDefault();
@@ -85,12 +37,12 @@ export default function Ask(props) {
     if (noCount === 0) {
       document.querySelector('.cry-animation-1').classList.remove('hidden');
       setAskText("Please don't say no?")
-      setEmojiAsk('😢')
+      setEmojiAsk('\u{1F622}')
     } else if (noCount === 1) {
       document.querySelector('.cry-animation-1').classList.add('hidden');
       document.querySelector('.cry-animation-2').classList.remove('hidden');
       setAskText("Please be my Valentine?")
-      setEmojiAsk('😭')
+      setEmojiAsk('\u{1F62D}')
     }
     else {
       document.querySelector('.cry-animation-2').classList.add('hidden');
@@ -113,7 +65,7 @@ export default function Ask(props) {
     document.querySelector('.accept-animation').classList.remove('hidden');
     document.querySelector('.buttons').classList.add('hidden');
     setAskText("Yayy!! I love you Suhani! ")
-    setEmojiAsk('😍');
+    setEmojiAsk('\u{1F60D}');
     setYesOrNow("Yes");
   }
 
@@ -122,37 +74,42 @@ export default function Ask(props) {
       <div className="animation w-fit h-fit">
         <div className="wait-animation pointer-events-none">
           <Lottie
-            options={boyLookingToBeAccepted}
-            height={300}
-            width={300}
+            animationData={boyLookingToBeAcceptedFile}
+            loop={true}
+            autoplay={true}
+            style={{ height: 300, width: 300 }}
           />
         </div>
         <div className='cry-animation-1 pointer-events-none hidden'>
           <Lottie
-            options={cryingBoyAnimation_1}
-            height={300}
-            width={300}
+            animationData={cryingBoyAnimationFile_1}
+            loop={true}
+            autoplay={true}
+            style={{ height: 300, width: 300 }}
           />
         </div>
         <div className='cry-animation-2 pointer-events-none hidden'>
           <Lottie
-            options={cryingBoyAnimation_2}
-            height={300}
-            width={300}
+            animationData={cryingBoyAnimationFile_2}
+            loop={true}
+            autoplay={true}
+            style={{ height: 300, width: 300 }}
           />
         </div>
         <div className='doesnt-matter-animation pointer-events-none hidden'>
           <Lottie
-            options={doesntMatterAnimation}
-            height={300}
-            width={300}
+            animationData={doesntMatterAnimationFile}
+            loop={true}
+            autoplay={true}
+            style={{ height: 300, width: 300 }}
           />
         </div>
         <div className='accept-animation pointer-events-none hidden'>
           <Lottie
-            options={acceptAnimation}
-            height={300}
-            width={300}
+            animationData={acceptAnimationFile}
+            loop={true}
+            autoplay={true}
+            style={{ height: 300, width: 300 }}
           />
         </div>
       </div>
