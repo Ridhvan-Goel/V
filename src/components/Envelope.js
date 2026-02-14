@@ -7,7 +7,7 @@ import boyThinkAnimationFile from './assets/animations/boy-thinking.json'
 import boyJumpingAnimatinFile from './assets/animations/boy-jumping.json'
 import YayAnimationFile from './assets/animations/yay.json'
 
-export default function Card(props) {
+export default function Card({ setProgress }) {
 
   const [isEnvelopeOpen, setIsEnvelopeOpen] = useState(false);
   const [buttonText, setButtonText] = useState("Open me !");
@@ -28,8 +28,8 @@ export default function Card(props) {
   }
 
   useEffect(() => {
-    props.setProgress(100);
-  }, [])
+    setProgress(100);
+  }, [setProgress])
 
   return (
     <div className="card-and-animation flex min-h-screen flex-col bg-transparent bg-gradient-to-tr from-[#3a1c71] via-[#d76d77] to-[#ffaf7b] ">

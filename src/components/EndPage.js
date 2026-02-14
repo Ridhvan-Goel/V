@@ -5,11 +5,11 @@ import './styles/endpage.css'
 import songVideo from './assets/videos/song.mp4';
 
 
-export default function Note(props) {
+export default function Note({ setProgress }) {
 
   useEffect(() => {
-    props.setProgress(100);
-  }, []);
+    setProgress(100);
+  }, [setProgress]);
 
 
   return (

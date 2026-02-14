@@ -8,7 +8,7 @@ import cryingBoyAnimationFile_2 from './assets/animations/crying_boy_2.json'
 import doesntMatterAnimationFile from './assets/animations/doesnt_matter_boy.json'
 import acceptAnimationFile from './assets/animations/love_animation.json'
 
-export default function Ask(props) {
+export default function Ask({ setProgress }) {
 
   const navigate = useNavigate();
 
@@ -26,8 +26,8 @@ export default function Ask(props) {
   }, [noCount, navigate]);
 
   useEffect(() => {
-    props.setProgress(100);
-  }, [])
+    setProgress(100);
+  }, [setProgress])
 
   const handleNoClick = (event) => {
     event.preventDefault();

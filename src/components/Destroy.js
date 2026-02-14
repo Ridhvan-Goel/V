@@ -3,11 +3,11 @@ import Lottie from 'lottie-react';
 import flameAnimationFile from './assets/animations/flames.json';
 import bombAnimationFile from './assets/animations/bomb.json';
 
-export default function Destroy(props) {
+export default function Destroy({ setProgress }) {
 
   useEffect(() => {
-    props.setProgress(100);
-  }, [])
+    setProgress(100);
+  }, [setProgress])
 
   useEffect(() => {
     const disableScroll = () => {
