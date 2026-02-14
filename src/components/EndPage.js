@@ -5,11 +5,11 @@ import './styles/endpage.css'
 import songVideo from './assets/videos/song.mp4';
 
 
-export default function Note(props) {
+export default function Note({ setProgress }) {
 
   useEffect(() => {
-    props.setProgress(100);
-  }, []);
+    setProgress(100);
+  }, [setProgress]);
 
 
   return (
@@ -31,13 +31,7 @@ export default function Note(props) {
             height="100%"
           />
         </div>
-        <div className="button">
-          <a href="https://www.instagram.com/scienmanas/">
-            <button className="button-chat-font  bg-transparent bg-gradient-to-bl from-[#ff00ff] to-[#5A3F37] text-white font-bold py-2 px-4 rounded-lg text-2xl sm:text-3xl lg:text-4xl shadow-2xl hover:scale-110 active:scale-95 duration-150 border-[2px] border-gray-300">
-              Wanna Chat ?
-            </button>
-          </a>
-        </div>
+
       </div>
     </div>
   );

@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Lottie from 'react-lottie';
+import Lottie from 'lottie-react';
 import loading_animation from './assets/animations/loader_animation.json';
 import './styles/loading.css';
-
-const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: loading_animation,
-    rendererSettings: {
-        preserveAspectRatio: "xMidYMid slice"
-    },
-};
 
 const Loading = () => {
     const [dots, setDots] = useState(1);
@@ -27,10 +18,10 @@ const Loading = () => {
         <div className="loading min-h-screen flex justify-center items-center flex-col bg-gradient-to-br from-[#cc2b5e] to-[#753a88]">
             <div className='lottie relative pointer-events-none'>
                 <Lottie
-                    options={defaultOptions}
-                    height={230}
-                    width={230}
-                    isClickToPauseDisabled={true}
+                    animationData={loading_animation}
+                    loop={true}
+                    autoplay={true}
+                    style={{ height: 230, width: 230 }}
                 />
             </div>
             <div className="loading-text select-none">

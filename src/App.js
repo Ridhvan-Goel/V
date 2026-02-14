@@ -19,9 +19,8 @@ function App() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-
     setTimeout(() => {
-      setLoading("False");
+      setLoading(false);
     }, 2000);
   }, [])
 

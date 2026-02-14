@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Lottie from 'react-lottie';
+import Lottie from 'lottie-react';
 import { Link } from 'react-router-dom';
 import bg from './assets/images/page-1_bg.png';
 import heartAnimation from './assets/animations/floating_hearts.json';
@@ -7,8 +7,8 @@ import './styles/frontpage.css';
 
 export default function FrontPage() {
     const [text, setText] = useState('');
-    const sentence = "We have known each other from a long time but today I have something important to tell you...\n";
-    const typingSpeed = 200; // Adjust typing speed here
+    const sentence = "Hey Suhani, we have known each other for a long time but today I have something really important to tell you...\n";
+    const typingSpeed = 200;
 
     useEffect(() => {
         const typeSentence = (index) => {
@@ -30,43 +30,37 @@ export default function FrontPage() {
         }, 100);
     }, []);
 
-    const floatingHeartAnimation = {
-        loop: true,
-        autoplay: true,
-        animationData: heartAnimation,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice'
-        },
-    };
-
     return (
         <div id='front-page' className='min-h-screen opacity-80 overflow-hidden w-full flex items-center justify-center flex-col gap-16 transition-opacity duration-200 ease-in-out bg-transparent bg-gradient-to-r from-[#c33764] to-[#1d2671]' >
             <img src={bg} alt="" className='absolute min-h-screen object-cover pointer-events-none overflow-hidden' />
             <div className="absolute pointer-events-none">
                 <Lottie
-                    options={floatingHeartAnimation}
-                    height={230}
-                    width={230}
-                    isClickToPauseDisabled={true}
+                    animationData={heartAnimation}
+                    loop={true}
+                    autoplay={true}
+                    style={{ height: 230, width: 230 }}
                 />
             </div>
             <div className="heart opacity-75">
                 <div className="text absolute -top-4 z-10 w-72 p-3 h-auto flex flex-col rotate-45 select-none">
                     <p className='w-fit h-fit text-font text-center custom-color-text'>
-                        In the midst of life's tumultuous sea,
+                        You are my lucky charm,
                     </p>
                     <p className='w-fit h-fit text-font text-center custom-color-text'>
-                        Amidst chaos and uncertainty,
+                        best things in the world that happened to me,
                     </p>
                     <p className='w-fit h-fit text-font text-center custom-color-text'>
-                        I found my anchor, my guiding light,
+                        my peace, I want to live all my happy moments with you,
                     </p>
                     <p className='w-fit h-fit text-font text-center custom-color-text'>
-                        In your love, serene and bright.
+                        I LOVE YOUU SUHANI TIWARI
+                    </p>
+                    <p className='w-fit h-fit text-font text-center custom-color-text font-bold'>
+                        WILL YOU BE MY VALENTINE FOREVER AND EVER
                     </p>
                 </div>
                 <div className="autor text-author absolute bottom-8 left-10 rotate-45">
-                    ~ Manas
+                    ~ Ridhvan
                 </div>
             </div>
             <div className="content-ask text-white z-10 flex flex-col flex-wrap gap-6 justify-center items-center">
