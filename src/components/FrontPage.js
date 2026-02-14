@@ -7,7 +7,7 @@ import './styles/frontpage.css';
 
 export default function FrontPage() {
     const [text, setText] = useState('');
-    const sentence = "We have known each other from a long time but today I have something important to tell you...\n";
+    const sentence = "Hey Suhani, we have known each other for a long time but today I have something really important to tell you...\n";
     const typingSpeed = 200; // Adjust typing speed here
 
     useEffect(() => {
@@ -53,20 +53,23 @@ export default function FrontPage() {
             <div className="heart opacity-75">
                 <div className="text absolute -top-4 z-10 w-72 p-3 h-auto flex flex-col rotate-45 select-none">
                     <p className='w-fit h-fit text-font text-center custom-color-text'>
-                        In the midst of life's tumultuous sea,
+                        You are my lucky charm,
                     </p>
                     <p className='w-fit h-fit text-font text-center custom-color-text'>
-                        Amidst chaos and uncertainty,
+                        best things in the world that happened to me,
                     </p>
                     <p className='w-fit h-fit text-font text-center custom-color-text'>
-                        I found my anchor, my guiding light,
+                        my peace, I want to live all my happy moments with you,
                     </p>
                     <p className='w-fit h-fit text-font text-center custom-color-text'>
-                        In your love, serene and bright.
+                        I LOVE YOUU SUHANI TIWARI
+                    </p>
+                    <p className='w-fit h-fit text-font text-center custom-color-text font-bold'>
+                        WILL YOU BE MY VALENTINE FOREVER AND EVER
                     </p>
                 </div>
                 <div className="autor text-author absolute bottom-8 left-10 rotate-45">
-                    ~ Manas
+                    ~ Ridhvan
                 </div>
             </div>
             <div className="content-ask text-white z-10 flex flex-col flex-wrap gap-6 justify-center items-center">
